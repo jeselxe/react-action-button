@@ -5,11 +5,11 @@ class App extends Component {
     render() {
         return (
             <div>
-                <ActionButton>
-                    <ActionButton.Item icon="ion-ios-cloud-download-outline">Download</ActionButton.Item>
-                    <ActionButton.Item icon="ion-ios-upload-outline">Share</ActionButton.Item>
-                    <ActionButton.Item icon="ion-ios-download-outline">Save</ActionButton.Item>
-                    <ActionButton.Item icon="ion-ios-trash-outline">Trash</ActionButton.Item>
+                <ActionButton icon="ion-edit">
+                    <ActionButton.Item icon="ion-ios-cloud-download">Download</ActionButton.Item>
+                    <ActionButton.Item icon="ion-ios-upload">Share</ActionButton.Item>
+                    <ActionButton.Item icon="ion-ios-download">Save</ActionButton.Item>
+                    <ActionButton.Item icon="ion-ios-trash">Trash</ActionButton.Item>
                 </ActionButton>
             </div>
         );

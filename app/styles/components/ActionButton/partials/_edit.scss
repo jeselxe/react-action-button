@@ -1,0 +1,142 @@
+.cd-stretchy-nav.edit-content {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+
+	.stretchy-nav-bg {
+		height: 30px;
+		width: 30px;
+		background-color: rgba(#000, .4);
+		box-shadow: none;
+		@include transition(background .2s, height .2s);
+	}
+
+	&.nav-is-visible .stretchy-nav-bg {
+		height: 100%;
+		background-color: rgba(#000, .8);
+		/* reset default style */
+		box-shadow: none;
+	}
+}
+
+.cd-stretchy-nav.edit-content .cd-nav-trigger {
+	height: 30px;
+	width: 30px;
+
+	span {
+		opacity: 0;
+		background-color: transparent;
+
+		&::before {
+			@include transform(rotate(-45deg));
+		}
+
+		&::after {
+			@include transform(rotate(45deg));
+		}
+	}
+
+    i
+
+	span, span::before, span::after {
+		/* used to create the 'X' icon when the navigation is open */
+		width: 12px;
+	}
+
+	i {
+		/* edit icon */
+		position: absolute;
+		height: 16px;
+		width: 16px;
+		@include center;
+        background: pink;
+		//background: url(../images/cd-sprite-3.svg) no-repeat 0 0;
+	}
+
+	span, i {
+		@include transition(opacity .2s);
+	}
+
+	.no-touch &:hover ~ .stretchy-nav-bg {
+		box-shadow: none;
+		background-color: rgba(#000, .8);
+	}
+}
+
+.cd-stretchy-nav.edit-content.nav-is-visible .cd-nav-trigger span {
+	opacity: 1;
+
+	&::before {
+		@include transform(rotate(45deg));
+	}
+
+	&::after {
+		@include transform(rotate(135deg));
+	}
+}
+
+.cd-stretchy-nav.edit-content.nav-is-visible .cd-nav-trigger i {
+	/* hide edit icon */
+	opacity: 0;
+}
+
+.cd-stretchy-nav.edit-content ul {
+	padding-top: 30px;
+}
+
+.cd-stretchy-nav.edit-content ul a {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0;
+
+	i {
+        position: absolute;
+		right: 5px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+	}
+}
+
+.cd-stretchy-nav.edit-content ul span {
+	position: absolute;
+	top: 0;
+	right: 35px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 1em;
+	opacity: 0;
+	visibility: hidden;
+	background-color: rgba(#000, .55);
+	border-radius: 2px;
+	text-align: center;
+	@include transition(opacity .2s, visibility .2s);
+
+	&::after {
+		/* triangle below the tooltip */
+		content: '';
+		position: absolute;
+		left: 100%;
+		@include center(y);
+		height: 0;
+		width: 0;
+		border: 4px solid transparent;
+		border-left-color: rgba(#000, .55);
+	}
+}
+
+.cd-stretchy-nav.edit-content.nav-is-visible ul {
+
+	span {
+		/* reset default style */
+		@include animation(none);
+	}
+
+	.no-touch & a:hover span {
+		opacity: 1;
+		visibility: visible;
+		/* reset default style */
+		@include transform(translateX(0));
+	}
+}

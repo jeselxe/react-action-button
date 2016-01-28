@@ -19,6 +19,7 @@ class ActionButton extends React.Component {
             <nav className={"cd-stretchy-nav edit-content " + (this.state.toggled ? "nav-is-visible" : "") }>
                 <a className="cd-nav-trigger" onClick={this.toggle.bind(this)}>
                     Menu
+                    <i className={this.props.icon}></i>
                     <span aria-hidden="true"></span>
                 </a>
                 <ul>
@@ -33,7 +34,7 @@ class ActionButton extends React.Component {
 ActionButton.Item = React.createClass({
     render () {
         return (
-            <li className={"icon " + this.props.icon}><a><span>{this.props.children}</span></a></li>
+            <li><a><i className={this.props.icon}></i><span>{this.props.children}</span></a></li>
         );
     }
 });

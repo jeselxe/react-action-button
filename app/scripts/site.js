@@ -72,6 +72,7 @@ var ActionButton = (function (_React$Component) {
                     "a",
                     { className: "cd-nav-trigger", onClick: this.toggle.bind(this) },
                     "Menu",
+                    _react2["default"].createElement("i", { className: this.props.icon }),
                     _react2["default"].createElement("span", { "aria-hidden": "true" })
                 ),
                 _react2["default"].createElement(
@@ -93,10 +94,11 @@ ActionButton.Item = _react2["default"].createClass({
     render: function render() {
         return _react2["default"].createElement(
             "li",
-            { className: "icon " + this.props.icon },
+            null,
             _react2["default"].createElement(
                 "a",
                 null,
+                _react2["default"].createElement("i", { className: this.props.icon }),
                 _react2["default"].createElement(
                     "span",
                     null,
@@ -154,25 +156,25 @@ var App = (function (_Component) {
                 null,
                 _react2['default'].createElement(
                     _ActionButton2['default'],
-                    null,
+                    { icon: 'ion-edit' },
                     _react2['default'].createElement(
                         _ActionButton2['default'].Item,
-                        { icon: 'ion-ios-cloud-download-outline' },
+                        { icon: 'ion-ios-cloud-download' },
                         'Download'
                     ),
                     _react2['default'].createElement(
                         _ActionButton2['default'].Item,
-                        { icon: 'ion-ios-upload-outline' },
+                        { icon: 'ion-ios-upload' },
                         'Share'
                     ),
                     _react2['default'].createElement(
                         _ActionButton2['default'].Item,
-                        { icon: 'ion-ios-download-outline' },
+                        { icon: 'ion-ios-download' },
                         'Save'
                     ),
                     _react2['default'].createElement(
                         _ActionButton2['default'].Item,
-                        { icon: 'ion-ios-trash-outline' },
+                        { icon: 'ion-ios-trash' },
                         'Trash'
                     )
                 )
